@@ -55,7 +55,7 @@
         <file src="src\Plugin.LocalNotifications.UWP\bin\Release\Plugin.LocalNotifications.xml" target="lib\UAP10\Plugin.LocalNotifications.xml" />
         <file src="src\Plugin.LocalNotifications.Abstractions\bin\Release\Plugin.LocalNotifications.Abstractions.dll" target="lib\UAP10\Plugin.LocalNotifications.Abstractions.dll" />
         <file src="src\Plugin.LocalNotifications.Abstractions\bin\Release\Plugin.LocalNotifications.Abstractions.xml" target="lib\UAP10\Plugin.LocalNotifications.Abstractions.xml" />
-        
+
         <!--Xamarin.Android-->
         <file src="src\Plugin.LocalNotifications.Android\bin\Release\Plugin.LocalNotifications.dll" target="lib\MonoAndroid10\Plugin.LocalNotifications.dll" />
         <file src="src\Plugin.LocalNotifications.Android\bin\Release\Plugin.LocalNotifications.xml" target="lib\MonoAndroid10\Plugin.LocalNotifications.xml" />
@@ -67,6 +67,6 @@
         <file src="src\Plugin.LocalNotifications.iOS\bin\iPhoneSimulator\Release\Plugin.LocalNotifications.xml" target="lib\Xamarin.iOS10\Plugin.LocalNotifications.xml" />
         <file src="src\Plugin.LocalNotifications.Abstractions\bin\Release\Plugin.LocalNotifications.Abstractions.dll" target="lib\Xamarin.iOS10\Plugin.LocalNotifications.Abstractions.dll" />
         <file src="src\Plugin.LocalNotifications.Abstractions\bin\Release\Plugin.LocalNotifications.Abstractions.xml" target="lib\Xamarin.iOS10\Plugin.LocalNotifications.Abstractions.xml" />
-    
+
     </files>
 </package>

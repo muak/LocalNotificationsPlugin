@@ -93,6 +93,11 @@ namespace Plugin.LocalNotifications
             alarmManager.Set(AlarmType.RtcWakeup, triggerTime, pendingIntent);
         }
 
+		public void Show(string title, string body, int id, DateTime notifyTime, int badgeNumber)
+		{
+			Show(title, body, id, notifyTime);
+		}
+
         /// <summary>
         /// Cancel a local notification
         /// </summary>

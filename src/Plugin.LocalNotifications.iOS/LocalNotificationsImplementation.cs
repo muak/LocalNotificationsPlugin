@@ -61,6 +61,25 @@ namespace Plugin.LocalNotifications
             }
         }
 
+		public void Show(string title, string body, int id, DateTime notifyTime,int badgeNumber)
+		{
+			if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0)) {
+				var trigger = UNCalendarNotificationTrigger.CreateTrigger(GetNSDateComponentsFromDateTime(notifyTime), false);
+				ShowUserNotification(title, body, id, trigger,badgeNumber);
+			}
+			else {
+				var notification = new UILocalNotification {
+					FireDate = (NSDate)notifyTime,
+					AlertTitle = title,
+					AlertBody = body,
+					UserInfo = NSDictionary.FromObjectAndKey(NSObject.FromObject(id), NSObject.FromObject(NotificationKey)),
+					ApplicationIconBadgeNumber = badgeNumber,
+				};
+
+				UIApplication.SharedApplication.ScheduleLocalNotification(notification);
+			}
+		}
+
         /// <summary>
         /// Cancel a local notification
         /// </summary>
@@ -86,7 +105,7 @@ namespace Plugin.LocalNotifications
         }
 
         // Show local notifications using the UNUserNotificationCenter using a notification trigger (iOS 10+ only)
-        void ShowUserNotification(string title, string body, int id, UNNotificationTrigger trigger)
+        void ShowUserNotification(string title, string body, int id, UNNotificationTrigger trigger,int badgeNumber=0)
         {
             if (!UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
             {
@@ -96,7 +115,8 @@ namespace Plugin.LocalNotifications
             var content = new UNMutableNotificationContent()
             {
                 Title = title,
-                Body = body
+                Body = body,
+				Badge = badgeNumber,
             };
             
             var request = UNNotificationRequest.FromIdentifier(id.ToString(), content, trigger);
