@@ -21,8 +21,23 @@
         </dependencies>
     </metadata>
     <files>
-        <file src="src\Plugin.LocalNotifications\bin\Release\netstandard1.0\Plugin.LocalNotifications.*" target="lib\netstandard1.0" />
-        <file src="src\Plugin.LocalNotifications.Android\bin\Release\Plugin.LocalNotifications.*" target="lib\MonoAndroid10" />
-        <file src="src\Plugin.LocalNotifications.iOS\bin\Release\Plugin.LocalNotifications.*" target="lib\Xamarin.iOS10" />
+	
+		<!-- .net standard 1.0 -->
+        <file src="netstandard/Plugin.LocalNotifications.dll" target="lib/netstandard1.0" />
+        <file src="netstandard/Plugin.LocalNotifications.xml" target="lib/netstandard1.0" />		
+		<file src="netstandard/Plugin.LocalNotifications.Abstractions.dll" target="lib/netstandard1.0" />
+        <file src="netstandard/Plugin.LocalNotifications.Abstractions.xml" target="lib/netstandard1.0" />
+
+        <!-- Mono.Android -->
+        <file src="netstandard/Plugin.LocalNotifications.Abstractions.dll" target="lib/MonoAndroid" />
+        <file src="netstandard/Plugin.LocalNotifications.Abstractions.xml" target="lib/MonoAndroid" />
+        <file src="android/Plugin.LocalNotifications.dll" target="lib/MonoAndroid" />
+        <file src="android/Plugin.LocalNotifications.xml" target="lib/MonoAndroid" />
+
+        <!-- Xamarin.iOS10 -->
+        <file src="netstandard/Plugin.LocalNotifications.Abstractions.dll" target="lib/Xamarin.iOS10" />
+        <file src="netstandard/Plugin.LocalNotifications.Abstractions.xml" target="lib/Xamarin.iOS10" />
+        <file src="iOS/Plugin.LocalNotifications.dll" target="lib/Xamarin.iOS10" />
+        <file src="iOS/Plugin.LocalNotifications.xml" target="lib/Xamarin.iOS10" />
     </files>
 </package>
