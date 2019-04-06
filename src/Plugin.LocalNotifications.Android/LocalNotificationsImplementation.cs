@@ -23,6 +23,12 @@ namespace Plugin.LocalNotifications
         public static int NotificationIconId { get; set; }
 
         /// <summary>
+        /// Gets or sets the color of the notification icon icon back.
+        /// </summary>
+        /// <value>The color of the notification icon icon back.</value>
+        public static Android.Graphics.Color? NotificationIconIconBackColor { get; set; }
+
+        /// <summary>
         /// Show a local notification
         /// </summary>
         /// <param name="title">Title of the notification</param>
@@ -42,6 +48,11 @@ namespace Plugin.LocalNotifications
             else
             {
                 builder.SetSmallIcon(Resource.Drawable.plugin_lc_smallicon);
+            }
+
+            if(NotificationIconIconBackColor.HasValue)
+            {
+                builder.SetColor(NotificationIconIconBackColor.Value);
             }
 
             if (Build.VERSION.SdkInt >= BuildVersionCodes.O)
