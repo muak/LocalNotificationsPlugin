@@ -1,6 +1,7 @@
 ## Local Notifications Plugin for Xamarin and Windows
 
 [![NuGet](https://img.shields.io/nuget/v/Xam.Plugins.Notifier.svg?label=NuGet)](https://www.nuget.org/packages/Xam.Plugins.Notifier/)
+[![Build status](https://ci.appveyor.com/api/projects/status/nsatqmgkahom3hpr?svg=true)](https://ci.appveyor.com/project/edsnider/localnotificationsplugin)
 
 A consistent and easy way to show local notifications in Xamarin and Windows apps.
 
@@ -10,15 +11,13 @@ A consistent and easy way to show local notifications in Xamarin and Windows app
 
 **Platform Support**
 
-|Platform|Supported|Version|
-| ------------------- | :-----------: | :------------------: |
-|Xamarin.iOS|Yes|iOS 7+|
-|Xamarin.Android|Yes|API 10+|
-|Windows Phone (Silverlight)|Yes|8.1+|
-|Windows Phone (WinRT)|Yes|8.1+|
-|Windows Store (WinRT)|Yes|8.1+|
-|Windows (UWP)|Yes|10+|
-|Xamarin.Mac|No||
+|Platform|Version|
+| ------------------- | :------------------: |
+|Xamarin.iOS|7.0+|
+|Xamarin.Android|3.0+ (API 11+)|
+|Xamarin.Mac|10.7+|
+|Windows (UWP)|10.0+|
+
 
 ### API Usage
 
@@ -87,7 +86,7 @@ Currently, if the phone is re-booted then the pending notifications are not sent
 You can set the notification Icon by setting the following property from inside your Android project:
 
 ```csharp
-LocalNotificationsImplementation.NotificationIconId = Resrouce.Drawable.YOU_ICON_HERE
+LocalNotificationsImplementation.NotificationIconId = Resource.Drawable.YOU_ICON_HERE
 ```
 
 ### Contributors
